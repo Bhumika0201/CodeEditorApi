@@ -1,0 +1,68 @@
+<div>
+  <!-- header -->
+  <nav class="navbar navbar-light bg-light ">
+      <div class="container text-center p-2 ">
+          <span class="mx-auto text-bold">Project on IDE</span>
+      </div>
+  </nav>
+</div>
+
+
+
+<div class="container h-100 mt-4">
+
+  <!-- languages & theme -->
+  <div class="row mb-4 justify-content-center mx-4">
+      <!-- languages select -->
+      <div class="col-auto col-lg-3 col-md-4 col-sm-6">
+          <div class="input-group input-group-sm">
+              <div class="input-group-prepend">
+                  <label class="input-group-text" for="languages-select">Languages</label>
+              </div>
+              <select class="languages-select" id="languages-select" #languagesSelect>
+                  <option value="java 1 ">Java JDK 9.0.1</option>
+                  <option value="java 2">Java JDK 10.0.1</option>
+                  <option value="nodejs 1">NodeJS</option >
+                  <option value="python3 2">Python3</option>
+                  <option value="csharp 2">C#</option>
+                  <option value="ruby 0">Ruby</option>
+                  <option value="php 1">Php 5.6.16</option>
+                  <option value="php 2">Php 7.2.5</option>
+              </select>
+
+
+          </div>
+      </div>
+
+  </div>
+
+  <!-- the code editor -->
+  <div class="row mb-4">
+      <div class="col">
+          <div class="code-editor" #codeEditor></div>
+      </div>
+  </div>
+
+  <!-- run, clear & beautify buttons -->
+  <div class="row mb-4 justify-content-center mx-4">
+      <div class="col-4 col-lg-2 col-md-3 col-sm-4 w-75">
+          <button type="button" class="btn btn-dark btn-sm btn-block px-4 mx-2" (click)="getCode( languagesSelect.value,codeEditor.value)">
+              Run
+          </button>
+      </div>
+
+      <div class="col-4 col-lg-2 col-md-3 col-sm-4 w-75">
+          <button type="button" class="btn btn-beautify btn-sm btn-block px-4 mx-2" (click)="beautifyContent()">
+              Beautify
+          </button>
+      </div>
+  </div>
+
+  <!-- output box -->
+  <div class="row mt-4">
+      <div class="col">
+          <div class="label-box border"><span class="mx-4 font-weight-light">Output</span></div>
+          <textarea  class="form-control output" rows="6" disabled="true" aria-label="output-textarea">{{ output }}</textarea>
+      </div>
+  </div>
+</div>
